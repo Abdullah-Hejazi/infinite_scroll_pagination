@@ -47,8 +47,7 @@ class PagingState<PageKeyType, ItemType> {
   }
 
   @override
-  String toString() =>
-      '${objectRuntimeType(this, 'PagingState')}(itemList: \u2524'
+  String toString() => '${objectRuntimeType(this, 'PagingState')}(itemList: \u2524'
       '$itemList\u251C, error: $error, nextPageKey: $nextPageKey)';
 
   @override
@@ -56,18 +55,8 @@ class PagingState<PageKeyType, ItemType> {
     if (identical(this, other)) {
       return true;
     }
-    return other is PagingState &&
-        other.itemList == itemList &&
-        other.error == error &&
-        other.nextPageKey == nextPageKey;
+    return other is PagingState && other.itemList == itemList && other.error == error && other.nextPageKey == nextPageKey;
   }
-
-  @override
-  int get hashCode => hashValues(
-        itemList.hashCode,
-        error.hashCode,
-        nextPageKey.hashCode,
-      );
 
   int? get _itemCount => itemList?.length;
 
